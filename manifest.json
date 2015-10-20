@@ -1,0 +1,19 @@
+{
+  "name": "AddTask",
+  "description": "Quickly add a task",
+  "version": "0.1",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+    "default_title": "Create a task with this page",
+    "default_icon": "az-mark.png"
+  },
+  "icons": { "16": "az-mark.png", "128": "az-mark.png" }
+}
