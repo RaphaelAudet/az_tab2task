@@ -1,0 +1,53 @@
+img.instructions {
+  height: 295px;
+}
+img.logo {
+  height: 50px;
+}
+body {
+  font-family: ProximaNova, Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: #f0f0f0;
+  font-size: 14px;
+}
+
+#header {
+  text-align: center;
+}
+
+#content {
+  width: 650px;
+  margin: 0px auto;
+  padding: 20px;
+  color: #383838;
+}
+
+
+#content input[type='text'] {
+  color: #383838;
+  font-family: ProximaNova, Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 100%;
+}
+
+#content-inner-container {
+  background-color: #fff;
+  border: 1px solid #cacaca;
+  padding: 30px 46px;
+
+  box-shadow: 0px 1px 0px #fff;
+  -webkit-box-shadow: 0px 1px 0px #fff;
+  -mozbox-shadow: 0px 1px 0px #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -border-radius: 5px;
+}
+
+#content-inner-container h2 {
+  text-align: center;
+  color: #777777;
+  font-size: 18pt;
+}
+
+.section-wrapper {
+  min-height: 60px;
+  border-top: 1px solid #DADADA;
+}
