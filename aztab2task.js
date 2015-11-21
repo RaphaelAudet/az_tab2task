@@ -2,7 +2,7 @@
 
 var task = {id: "undefined", owner_id: "undefined", label: "undefined", body: "", url: "" }
 
-function createTask(url) {
+function createTask(label) {
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -10,7 +10,6 @@ function createTask(url) {
       createdTaskCallback(xhttp); }
   }
   var targetUrl=apiUrl + "/tasks";
-  var label=url;
   var params='label=' + label;
   xhttp.open("POST", targetUrl , true);
   xhttp.setRequestHeader('Authorization', 'Token token='+window.localStorage.apiKey);
@@ -31,7 +30,7 @@ function parseJson(xhttp) {
 function createdTaskCallback(xhttp) {
   parseJson(xhttp);
   updateUI();
-  updateTask();
+  // updateTask();
 }
 
 function updatedTaskCallback(xhttp) {
@@ -41,11 +40,11 @@ function updatedTaskCallback(xhttp) {
 
 function updateUI() {
   spinnerHide();
-  debugTask();
+  document.getElementById('text').value = task.label;
+  // debugTask();
 }
 
 function debugTask() {
-  document.getElementById('text').value = task.label;
   console.log('task_id:'+  task.id);
   console.log('owner_id:'+  task.owner_id);
   console.log('label:'+  task.label);
@@ -75,7 +74,7 @@ function updateTask() {
   // var params = JSON.stringify({"owner":task.owner_id, "owner":{"id":task.owner_id},"owner_id":task.owner_id});
   // var params = JSON.stringify({owner: task.owner_id});
   // var params = JSON.stringify({"owner":task.owner_id ,"label":label});
-  // var params ='{"owner"="' + task.owner_id +'"}';
+  var params ='{"owner"="' + task.owner_id +'"}';
   // var params ='{"owner"="' + task.owner_id +'"}';
   // var params = JSON.stringify({"body":task.label,"label":label});
   xhttp.open("PUT", targertUrl , true);
@@ -88,11 +87,10 @@ function updateTask() {
 /*---buttons functions ---*/
 
 function addUrlInBody() {
-  console.log("addUrlInBody");
+  // console.log("addUrlInBody");
 }
 
 function deleteTask() {
-  console.log("deleteTask");
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -103,11 +101,9 @@ function deleteTask() {
   }
   var label = document.getElementById('text').value;
   var targertUrl=apiUrl + "/tasks/"+task.id;
-
   xhttp.open("DELETE", targertUrl , true);
   xhttp.setRequestHeader('Authorization', 'Token token='+window.localStorage.apiKey);
   xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  // xhttp.setRequestHeader('Content-Type', 'application/javascript');
   spinnerShow();
   xhttp.send();
 }
