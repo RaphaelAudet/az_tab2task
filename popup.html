@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+<!--
+   _____             ___________     ___.    ___________________              __
+  /  _  \ ________   \__    ___/____ \_ |__  \_____  \__    ___/____    _____|  | __
+ /  /_\  \\___   /     |    |  \__  \ | __ \  /  ____/ |    |  \__  \  /  ___/  |/ /
+/    |    \/    /      |    |   / __ \| \_\ \/       \ |    |   / __ \_\___ \|    <
+\____|__  /_____ \_____|____|  (____  /___  /\_______ \|____|  (____  /____  >__|_ \
+        \/      \/_____/            \/    \/         \/             \/     \/     \/
+-->
+  <head>
+    <script src="aztab2task.js"></script>
+    <!-- // <script src="popup.js"></script> -->
+    <script src="popup.local.js"></script>
+    <style type="text/css">
+      #spinner {
+        background-image: url("ajax-loader.gif");
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      #content {
+        width:400px
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" >
+      <span id="spinner"></span>
+      <button id="addUrlInBody" title="Add the current tab url in the body" type="checkbox">+ Url</button>
+      <input id="text" type="text"/>
+      <button id="saveTask" title="tutu ftw =)" type="button">Update</button>
+      <button id="deleteTask" title="Delete the task you just created">Delete</button>
+    </div>
+  </body>
+</html>
