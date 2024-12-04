@@ -1,3 +1,5 @@
+[DEPRECATED]
+
 # Introduction
 
 I am hooked to Pocket chromium extension and I use it for everything, to send stuff to read later, to watch later, to buy later, to DO later...And it's getting crowded!
